@@ -26,4 +26,3 @@ The extension runs on X.com and displays a counter in the top-right corner showi
 - Achievement milestones (25%, 50%, etc.)
 - Keyboard shortcut support (Cmd+Enter)
 - Custom icon
-
