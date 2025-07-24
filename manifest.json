@@ -1,9 +1,14 @@
 {
     "manifest_version": 3,
     "name": "X Reply Counter",
+    "icons": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+    },
     "version": "1.0",
     "description": "Track how many replies you've made on X today.",
-    "permissions": ["storage", "scripting"],
+    "permissions": ["storage", "scripting", "tabs"],
     "content_scripts": [
       {
         "matches": ["*://*.x.com/*"],
@@ -13,7 +18,8 @@
       }
     ],
     "action": {
-      "default_title": "Reply Counter"
+      "default_title": "Reply Counter",
+      "default_popup": "popup.html"
     }
   }
   

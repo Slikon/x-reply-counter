@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            width: 300px;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 18px;
+            color: #1da1f2;
+        }
+        
+        .setting-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        input[type="number"] {
+            width: 100%;
+            padding: 8px 12px;
+            border: 2px solid #e1e8ed;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #1da1f2;
+        }
+        
+        .save-btn {
+            width: 100%;
+            background: #1da1f2;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .save-btn:hover {
+            background: #1a91da;
+        }
+        
+        .current-progress {
+            background: #f7f9fa;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .progress-text {
+            color: #657786;
+            font-size: 14px;
+        }
+        
+        .progress-number {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1da1f2;
+            margin: 4px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Reply Counter Settings</h1>
+    </div>
+    
+    <div class="current-progress">
+        <div class="progress-text">Today's Progress</div>
+        <div class="progress-number" id="current-count">0 / 50</div>
+    </div>
+    
+    <div class="setting-group">
+        <label for="daily-goal">Daily Reply Goal:</label>
+        <input type="number" id="daily-goal" min="1" max="1000" value="50">
+    </div>
+    
+    <button class="save-btn" id="save-settings">Save Settings</button>
+    
+    <script src="popup.js"></script>
+</body>
+</html> 
