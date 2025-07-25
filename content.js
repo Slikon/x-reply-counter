@@ -12,8 +12,12 @@ function cleanupOldCounters() {
 }
 
 function getTodayKey() {
+    // Use local date (not UTC) so the counter resets at the user's local midnight
     const today = new Date();
-    return `replyCount_${today.toISOString().split("T")[0]}`; // e.g. replyCount_2025-07-23
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+    const day = String(today.getDate()).padStart(2, '0');
+    return `replyCount_${year}-${month}-${day}`; // e.g. replyCount_2025-07-23
 }
 
 function getMilestoneInfo(count, goal) {

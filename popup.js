@@ -7,7 +7,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     // Load current count for today
     const today = new Date();
-    const todayKey = `replyCount_${today.toISOString().split("T")[0]}`;
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    const todayKey = `replyCount_${year}-${month}-${day}`;
     const countData = await chrome.storage.local.get([todayKey]);
     const currentCount = countData[todayKey] || 0;
     
