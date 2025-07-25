@@ -117,6 +117,27 @@ document.addEventListener("click", async (e) => {
     }
 });
 
+// Listen for CMD + Enter keyboard shortcut to send replies
+document.addEventListener("keydown", async (e) => {
+    // Check for CMD + Enter (metaKey is CMD on Mac)
+    if (e.metaKey && e.key === "Enter") {
+        // Locate the Reply button for the active composer
+        const replyButton = document.querySelector('button[data-testid="tweetButtonInline"]');
+        const textInput = document.querySelector('span[data-text=true]');
+
+        // Proceed only if the button exists AND is enabled (user has typed text)
+        if (!replyButton || !textInput || textInput?.textContent.trim() === '') {
+            return; // Nothing to do – either no button or empty input
+        }
+
+        const key = getTodayKey();
+        const data = await chrome.storage.local.get([key]);
+        const count = (data[key] || 0) + 1;
+        await chrome.storage.local.set({ [key]: count });
+        updateCounterDisplay(count);
+    }
+});
+
 // On load, show today's counter
 (async () => {
     cleanupOldCounters();
