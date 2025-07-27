@@ -7,7 +7,7 @@ A browser extension that tracks how many replies you've made on X (Twitter) toda
 - **Daily Reply Tracking**: Automatically counts each time you click "Reply" on X
 - **Goal System**: Set daily reply goals (default: 50 replies)
 - **Visual Counter**: Fixed display showing current count vs daily goal
-- **Auto Cleanup**: Automatically removes old day's data
+- **Auto Cleanup**: Automatically removes old day's data from your local storage in Chrome
 
 ## Installation
 
@@ -20,9 +20,9 @@ A browser extension that tracks how many replies you've made on X (Twitter) toda
 
 The extension runs on X.com and displays a counter in the top-right corner showing your daily reply progress. Data is stored locally and resets each day.
 
-## Planned Features
+## Contribution guide
 
-- Settings popup to configure goals
-- Achievement milestones (25%, 50%, etc.)
-- Keyboard shortcut support (Cmd+Enter)
-- Custom icon
+If you want to contribute, feel free to leave PRs.
+
+To connect, DM me on X:
+https://x.com/Avals_lik
